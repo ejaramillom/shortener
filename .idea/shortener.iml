@@ -97,6 +97,8 @@
     <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.1.1, asdf: 3.1.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v13.2.1, asdf: 3.1.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v6.7.0, asdf: 3.1.6) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redis (v5.2.0, asdf: 3.1.6) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="redis-client (v0.22.2, asdf: 3.1.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v2.9.2, asdf: 3.1.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="reline (v0.5.9, asdf: 3.1.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rexml (v3.3.5, asdf: 3.1.6) [gem]" level="application" />
@@ -110,6 +112,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.2, asdf: 3.1.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.3.1, asdf: 3.1.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v4.23.0, asdf: 3.1.6) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sidekiq (v7.3.1, asdf: 3.1.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v4.2.1, asdf: 3.1.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.5.2, asdf: 3.1.6) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v2.0.4, asdf: 3.1.6) [gem]" level="application" />
@@ -138,6 +141,8 @@
     <option name="generators">
       <list>
         <option value="active_record:application_record" />
+        <option value="active_record:migration" />
+        <option value="active_record:model" />
         <option value="active_record:multi_db" />
         <option value="application_record" />
         <option value="benchmark" />
@@ -145,7 +150,6 @@
         <option value="controller" />
         <option value="devcontainer" />
         <option value="generator" />
-        <option value="helper" />
         <option value="integration_test" />
         <option value="jbuilder" />
         <option value="job" />
@@ -156,19 +160,30 @@
         <option value="resource" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="sidekiq:job" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />
         <option value="test_unit:channel" />
+        <option value="test_unit:controller" />
         <option value="test_unit:generator" />
+        <option value="test_unit:helper" />
         <option value="test_unit:install" />
+        <option value="test_unit:integration" />
+        <option value="test_unit:job" />
         <option value="test_unit:mailbox" />
+        <option value="test_unit:mailer" />
+        <option value="test_unit:model" />
         <option value="test_unit:plugin" />
+        <option value="test_unit:scaffold" />
+        <option value="test_unit:system" />
       </list>
     </option>
     <option name="myGenerators">
       <list>
         <option value="active_record:application_record" />
+        <option value="active_record:migration" />
+        <option value="active_record:model" />
         <option value="active_record:multi_db" />
         <option value="application_record" />
         <option value="benchmark" />
@@ -176,7 +191,6 @@
         <option value="controller" />
         <option value="devcontainer" />
         <option value="generator" />
-        <option value="helper" />
         <option value="integration_test" />
         <option value="jbuilder" />
         <option value="job" />
@@ -187,14 +201,23 @@
         <option value="resource" />
         <option value="scaffold" />
         <option value="scaffold_controller" />
+        <option value="sidekiq:job" />
         <option value="stimulus" />
         <option value="system_test" />
         <option value="task" />
         <option value="test_unit:channel" />
+        <option value="test_unit:controller" />
         <option value="test_unit:generator" />
+        <option value="test_unit:helper" />
         <option value="test_unit:install" />
+        <option value="test_unit:integration" />
+        <option value="test_unit:job" />
         <option value="test_unit:mailbox" />
+        <option value="test_unit:mailer" />
+        <option value="test_unit:model" />
         <option value="test_unit:plugin" />
+        <option value="test_unit:scaffold" />
+        <option value="test_unit:system" />
       </list>
     </option>
   </component>

@@ -1,5 +1,6 @@
 class Url < ApplicationRecord
   before_create :shorten
+  after_create_commit :enqueue_crawl_job
 
   validates :original_url, presence: true
 
@@ -13,5 +14,9 @@ class Url < ApplicationRecord
 
   def shorten
     self.shortened_url = SecureRandom.urlsafe_base64(5)
+  end
+
+  def enqueue_crawl_job
+    CrawlUrlJob.perform_later(self.id)
   end
 end

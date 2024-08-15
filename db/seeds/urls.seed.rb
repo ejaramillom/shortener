@@ -6,7 +6,7 @@ ActiveRecord::Base.transaction do
     Url.create!([
       original_url: Faker::Internet.url,
       shortened_url: SecureRandom.urlsafe_base64(5),
-      title: Faker::Lorem.sentence,
+      title_url: Faker::Lorem.sentence,
       counter: Faker::Number.between(from: 0, to: 20)
     ])
   end

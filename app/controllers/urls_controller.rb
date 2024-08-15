@@ -29,16 +29,12 @@ class UrlsController < ApplicationController
 
   # POST /urls or /urls.json
   def create
-    url = Url.find_or_initialize_by(url_params)
+    @url = Url.find_or_initialize_by(url_params)
 
-    respond_to do |format|
-      if @url.save
-        format.html { redirect_to url_url(@url), notice: "Url was successfully created." }
-        format.json { render :show, status: :created, location: @url }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @url.errors, status: :unprocessable_entity }
-      end
+    if @url.save
+      render json: { message: "URL created",  url: @url }, status: :ok
+    else
+      render json: @url.errors, status: :unprocessable_entity
     end
   end
 
@@ -73,6 +69,6 @@ class UrlsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def url_params
-      params.require(:url).permit(:original_url, :shortened_url, :counter)
+      params.require(:url).permit(:original_url, :shortened_url, :title_url, :counter)
     end
 end
