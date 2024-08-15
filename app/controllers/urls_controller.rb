@@ -1,9 +1,11 @@
 class UrlsController < ApplicationController
-  before_action :set_url, only: %i[ show edit update destroy ]
+  before_action :set_url, only: %i[ show create destroy ]
 
   # GET /urls or /urls.json
   def index
     @urls = Url.by_counter
+
+    render json: { message: "URLs found",  urls: @urls }, status: :ok
   end
 
   # GET /urls/1 or /urls/1.json
@@ -17,13 +19,13 @@ class UrlsController < ApplicationController
   end
 
   # GET /urls/new
-  def new
-    @url = Url.new
-  end
+  # def new
+  #   @url = Url.new
+  # end
 
   # GET /urls/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /urls or /urls.json
   def create
@@ -41,17 +43,17 @@ class UrlsController < ApplicationController
   end
 
   # PATCH/PUT /urls/1 or /urls/1.json
-  def update
-    respond_to do |format|
-      if @url.update(url_params)
-        format.html { redirect_to url_url(@url), notice: "Url was successfully updated." }
-        format.json { render :show, status: :ok, location: @url }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @url.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @url.update(url_params)
+  #       format.html { redirect_to url_url(@url), notice: "Url was successfully updated." }
+  #       format.json { render :show, status: :ok, location: @url }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @url.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /urls/1 or /urls/1.json
   def destroy
@@ -66,7 +68,7 @@ class UrlsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_url
-      @url = Url.find_by(shortened_url: params[:shortened_url])
+      @url = Url.find_by_id(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

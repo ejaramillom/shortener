@@ -3,7 +3,7 @@ class Url < ApplicationRecord
 
   validates :original_url, presence: true
 
-  scope :by_counter, -> { order(counter: :asc).first(100) }
+  scope :by_counter, -> { order(counter: :desc).first(100) }
 
   def increase_counter
     self.counter = self.counter + 1
