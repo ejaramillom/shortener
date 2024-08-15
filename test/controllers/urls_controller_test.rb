@@ -45,4 +45,20 @@ class UrlsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to urls_url
   end
+
+  # describe "GET #show" do
+  #   context "when the URL exists" do
+  #     before do
+  #       allow(controller).to receive(:set_url).and_return(url)
+  #     end
+  #
+  #     it "increases the counter of the URL" do
+  #       let(:url) { create(:url) }
+  #
+  #       expect {
+  #         get :show, params: { id: url.id }
+  #       }.to change { url.reload.counter }.by(1)
+  #     end
+  #   end
+  # end
 end
